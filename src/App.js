@@ -9,7 +9,13 @@ function App(props) {
         <h1>Trelloyes!</h1>
       </header>
       <div className="App-list">
-        <List store={props.store}/>
+        {props.store.lists.map(list => (
+          <List 
+            key={list.id} 
+            header={list.header} 
+            cards={list.cardIds.map(id => props.store.allCards[id])}
+          />
+        ))}
       </div>
     </main>
   );
