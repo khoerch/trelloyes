@@ -7,6 +7,12 @@ function Card(props) {
         <div className="Card">
             <h3>{props.title}</h3>
             <p>{props.content}</p>
+            <button 
+                type="button" 
+                className="Card-delete-button"
+                onClick={() => props.delete(props)}>
+                Delete
+            </button>
         </div>
     )
 }
