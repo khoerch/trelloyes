@@ -10,11 +10,15 @@ function Card(props) {
             <button 
                 type="button" 
                 className="Card-delete-button"
-                onClick={() => props.delete(props)}>
+                onClick={() => props.delete(props.id)}>
                 Delete
             </button>
         </div>
     )
+}
+
+Card.propTypes = {
+    onClickDelete: () => {}
 }
 
 export default Card;

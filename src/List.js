@@ -9,10 +9,10 @@ function List(props) {
                 <h2>{props.header}</h2>
             </header>
             <div className="List-cards">
-                {props.cards.map((card, i) => (
+                {props.cards.map((card) => (
                     <Card 
-                        key={i} 
-                        list={props.list}
+                        key={card.id} 
+                        id={card.id}
                         title={card.title} 
                         content={card.content}
                         delete={props.delete}
@@ -21,12 +21,16 @@ function List(props) {
                 <button 
                     type="button" 
                     className="List-add-button"
-                    onClick={() => props.random(props.list)}>
+                    onClick={() => props.random(props.id)}>
                     + Add Random Card
                 </button>
             </div>
         </section>
     )
+}
+
+List.defaultProps = {
+    onClickAdd: () => {},
 }
 
 export default List;
